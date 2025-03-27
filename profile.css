@@ -1,0 +1,166 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    background: black;
+}
+
+/* Starry Background Animation */
+@keyframes twinkling {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+/* Background Stars */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('pexels-felixmittermeier-956999.jpg') repeat top center;
+    animation: twinkling 2s infinite alternate;
+    z-index: -2;
+}
+
+/* Moving Nebula */
+@keyframes nebulaMove {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+.nebula {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('pexels-pixabay-258149.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+    animation: nebulaMove 30s linear infinite;
+    z-index: -1;
+}
+
+/* Profile Section */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+}
+
+.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffcc00;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Content Container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Skills Section */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #ffcc00;
+    color: black;
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Projects Section */
+.projects .project {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.projects .project:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ffcc00;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffcc00;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffaa00;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .project img {
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
